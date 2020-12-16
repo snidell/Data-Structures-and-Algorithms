@@ -1,3 +1,4 @@
+
 from typing import List
 class Solution:
     # works only on Square matrices
@@ -60,6 +61,39 @@ class Solution:
             c1 += 1; c2 -= 1
         return ans
 
+def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+		# iteration variable
+        left, right = 0, len(matrix[0]) - 1
+        top, bottom = 0, len(matrix) - 1
+
+        direction = 0
+        result = []
+
+        while left <= right and top <= bottom:
+            if direction % 4 == 0:
+                #left to right
+                for i in range(left, right + 1):
+                    result.append(matrix[top][i])
+                top += 1
+            elif direction % 4 == 1:
+                # top to bottom
+                for i in range(top, bottom + 1):
+                    result.append(matrix[i][right])
+                right -= 1
+            elif direction % 4 == 2:
+                # right to left
+                for i in reversed(range(left, right + 1)):
+                    result.append(matrix[bottom][i])
+                bottom -= 1
+            else:
+                # bottom to top
+                for i in reversed(range(top, bottom + 1)):
+                    result.append(matrix[i][left])
+                left += 1
+            direction += 1
+
+        return result
+
 
 if __name__ == "__main__":
     mySolution = Solution()
@@ -71,4 +105,4 @@ if __name__ == "__main__":
     print(mySolution.matrix_in_spiral_order(A))
     print(mySolution.spiralOrder(A))
     print(mySolution.spiralOrderOptimized(A))
-    mySolution.test(A)
+    print(mySolution.spiralOrder(A))

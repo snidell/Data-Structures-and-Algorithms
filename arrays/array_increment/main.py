@@ -13,7 +13,7 @@ class Solution:
                 # he result. #A slick way to do this is to append a @ at
                 # the end of the array, #and update the first entry to 1.
                 A[0] =1
-                A. append(0)
+                A.append(0)
         return A
 
 
