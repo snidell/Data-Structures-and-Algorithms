@@ -4,10 +4,7 @@ class CircularQueue:
         self._entries = [0]*capacity
         self._head = self._tail = self._num_queue_elements = 0
 
-    def enqueue(self,x: int) -> None:
-        print("head: ",self._head)
-        print("tail: ",self._tail)
-        print("num items: ",self._num_queue_elements)
+    def enqueue(self,x: int) -> None:        
         # do we need to make the array bigger?
         if self._num_queue_elements == len(self._entries):
             self._entries = (self._entries[self._head:] +

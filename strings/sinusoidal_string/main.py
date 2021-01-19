@@ -1,7 +1,7 @@
 # 6.10 WRITE A STRING SINUSOIDALLY
 
 # Define the snakestring of s to be the left-right top-to-bottom sequence
-# in which characters appear whensiswritteninsinusoidalfashion.
+# in which characters appear when this is written in sinusoidal fashion.
 # For example, the snake string string for "Hello_World!" is "e_lHloWrdlo!".
 class Solution:
     def snake_string(self,s: str) -> str:

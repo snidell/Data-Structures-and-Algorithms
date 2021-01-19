@@ -14,7 +14,7 @@ class Solution():
 # what if we had really bad luck with randrange and ended up getting the same rand_idx multiple times?
 # n: 20 and k = 10  and our random was always 10?
 #
-# keys in the hashmap would continue to slide to the next (i) resulting if __name__ == '__main__':
+# keys in the hashmap would continue to slide to the next (i) resulting
 # our only random number and the times it has appeared
 # {10: 0, 0: 10}
 # {10: 1, 0: 10, 1: 0}

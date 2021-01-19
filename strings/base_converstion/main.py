@@ -10,14 +10,7 @@ class Solution:
         while as_int:
             result+=(string.hexdigits[as_int%b2])
             as_int//=b2
-
-
         return ''.join(reversed(result))
-
-
-
-
-
 
 if __name__ =="__main__":
     mySolution = Solution()

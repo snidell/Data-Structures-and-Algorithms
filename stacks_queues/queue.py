@@ -1,5 +1,5 @@
 import collections
-# queues are FIFO approach. Queus are idel when order needs to be preserved
+# queues are FIFO approach. Queus are ideal when order needs to be preserved
 class Queue:
     def __init__(self)-> None:
         self._data: Deque[int] = collections.deque()
