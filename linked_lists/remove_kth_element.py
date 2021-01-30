@@ -11,11 +11,14 @@ from linked_list.list_node import ListNode
 class Solution:
     def remove_kth_last(self,L: ListNode, k: int)->Optional[ListNode]:
         dummy_head = ListNode(0,L)
+
         first = dummy_head.next
         for _ in range(k):
+            print("go")
             first = first.next
 
         second = dummy_head
+        print("first: ",first.data," second:",second.data)
         while first:
             first, second = first.next, second.next
 
@@ -37,4 +40,4 @@ if __name__ == "__main__":
     L1.insert_after(myNode3,myNode4)
     L1.insert_after(myNode4,myNode5)
     L1.print_list(myNode1)
-    L1.print_list(mySolution.remove_kth_last(myNode1,4))
+    L1.print_list(mySolution.remove_kth_last(myNode1,3))

@@ -41,3 +41,27 @@ if __name__ == "__main__":
     # result of the runnign median : [3, 1.0, 2, 2.5, 3, 3.5, 4]
 
     print(mySolution.get_median(myIt))
+
+    myList = [1,1,2,3,4,4,5,6,6,7,8]
+
+    mySet = set(myList)
+    for num in mySet:
+        print(num)
+
+    myRanList = [1,34,344,33,5,56,7,8,9,10,11]
+    heapq.heapify(myRanList)
+    print("heap list: ",myRanList)
+    print(heapq.heappop(myRanList))
+    print("heap list: ",myRanList)
+    print(heapq.heappop(myRanList))
+    print("heap list: ",myRanList)
+    print(heapq.heappop(myRanList))
+    print("heap list: ",myRanList)
+    print(heapq.heappop(myRanList))
+    print("heap list: ",myRanList)
+    print(heapq.heappop(myRanList))
+    print("heap list: ",myRanList)
+    print(heapq.heappop(myRanList))
+    print("heap list: ",myRanList)
+    print(heapq.heappop(myRanList))
+    print("heap list: ",myRanList)
