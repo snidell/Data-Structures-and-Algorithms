@@ -51,7 +51,6 @@ class Solution:
 
         total = functools.reduce(lambda a,b:a+b,myList)
         max = functools.reduce(lambda a,b: a if a>b else b,myList2)
-        max = functools.reduce(lambda a,b: a if a>b else b,myList2)
         print(total, "functools.reduce(lambda a,b: a+b, myList)")
         print(max,"functools.reduce(lambda a,b:a if a>b else b,myList2)")
     # zip maps similar index of multiple containers
@@ -93,10 +92,10 @@ class Solution:
     # groups by must be sorted
     def testGroupBy(self):
         things = [("animal", "bear"), ("animal", "duck"),("vehicle", "speed boat"), ("plant", "cactus"),  ("vehicle", "school bus")]
+        print(itertools.groupby(things, lambda x: x[0]))
         for key, group in itertools.groupby(things, lambda x: x[0]):
-            for thing in group:
-                print("A %s is a %s." % (thing[1], key))
-                print("")
+                key_and_group = {key : list(group)}
+                print(key_and_group)
 
         # for unsorted it groups consecutive occurences
         for key,group in itertools.groupby("BCAACACAADBBB",None):
@@ -111,6 +110,7 @@ class Solution:
         #accumulates the reults of the pervious operands in a list
         myList = [1,2,3,4,5,6,7]
         mulAccumulate = itertools.accumulate(myList,operator.mul)
+        print("1,1*2=2,2*3=6,6*4=24,24*5=120...=5040")
         print(list(mulAccumulate))
 
     def testProduct(self):
@@ -164,7 +164,7 @@ def play_math(x: float, y:int):
     print(x**y, "exponent")
     print(math.floor(y),"floor of y")
     print(math.ceil(y),"ceil of y")
-    print(math.sqrt(255),"sqrt of 255")
+    print(math.sqrt(144),"sqrt of 144")
 def play_conversion(x:int,y:str):
     print("string to int",int(y))
     print("int to string",str(x))
@@ -176,6 +176,11 @@ def play_infinite():
     print(float("-inf"))
     print(float("-inf")>10,"float(\"-inf\")>10")
     print(float("inf")>10,"float(\"inf\")>10")
+    myList = [1,2,3,4]
+    print(range(len(myList)))
+    for i in range(len(myList)):
+
+        print(i, myList[i])
 
 if __name__ =="__main__":
     mySolution = Solution()

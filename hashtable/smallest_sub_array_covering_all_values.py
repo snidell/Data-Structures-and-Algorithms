@@ -11,6 +11,7 @@ class Solution:
     def find_smallest_subarray_covering_set(self, paragraph:List[str],
                                             keywords: List[str])->Subarray:
         keywords_to_cover = collections.Counter(keywords)
+        print(keywords_to_cover)
         result = Subarray(start=-1, end=-1)
         remaining_to_cover = len(keywords)
         left = 0

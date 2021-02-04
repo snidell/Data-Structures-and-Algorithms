@@ -26,6 +26,7 @@ class Solution():
             is_negative = -1
         running_sum = 0
         for i in range(1,len(s)):
+            print("s[i]: ",s[i])
             running_sum = running_sum * 10 + string.digits.index(s[i])
             print(running_sum)
         return is_negative * running_sum
@@ -37,5 +38,9 @@ class Solution():
 
 if __name__ =="__main__":
     mySolution = Solution()
+    print(ord('A'))
+    print(chr(65))
+    print("string index",string.digits.index("4 "))
+    
     print(mySolution.int_to_string(-123))
     print(mySolution.string_to_int("-2222233"))
