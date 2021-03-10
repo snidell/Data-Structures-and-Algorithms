@@ -21,6 +21,10 @@ import collections
 import string
 
 class Solution:
+    # time complexity number of edges in the worst case could be O(d^2) so
+    # complexity of BFS is O(d+d^2) ==O(d^2) if the length of the string n is
+    # less than d then max number of edges is O(n) implying O(nd) bound
+    # space complexity
     def transform_string(self,D: Set[str],s: str, t:str)->int:
         StringWithDistance = collections.namedtuple('StringWithDistance',('candidate_string','distance'))
         # use BFS to find the shortest path ie last amount of transforms
@@ -43,8 +47,22 @@ class Solution:
                         q.append(StringWithDistance(cand,f.distance +1))
         return -1 # Cannot find possible transform
 
+def calculateSumOfNumbersInString(inputString: str) -> int:
+    temp = ""
+    sum = 0
+    for i in range(0, len(inputString)):
+        ch = inputString[i]
+        if ch.isdigit():
+            temp += ch
+        else:
+            sum += int(temp)
+
+    return sum + int(temp)
+
 
 if __name__ =="__main__":
     mySolution = Solution()
     myDictionary = set(["bat", "cot", "dog", "dag", "dot", "cat"])
     print("length of the shortest production sequence: ",mySolution.transform_string(myDictionary,"dog","cat"))
+
+    print(calculateSumOfNumbersInString("199"))
