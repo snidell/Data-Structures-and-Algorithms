@@ -22,12 +22,13 @@ class Solution:
 
         result = []
         for x in sequence:
+            # push ontop max heap while maintainging both min/max heaps
             heapq.heappush(max_heap,-heapq.heappushpop(min_heap,x))
             # ensure each heap has same num elements or min heap has +1 more
-
+            
             if len(max_heap) > len(min_heap):
                 heapq.heappush(min_heap,-heapq.heappop(max_heap))
-
+            print("max_heap: ",max_heap," min_heap: ",min_heap)
             result.append(0.5 * (min_heap[0] + (-max_heap[0])) if len(min_heap)
                            ==  len(max_heap) else min_heap[0])
 
@@ -44,24 +45,24 @@ if __name__ == "__main__":
 
     myList = [1,1,2,3,4,4,5,6,6,7,8]
 
-    mySet = set(myList)
-    for num in mySet:
-        print(num)
-
-    myRanList = [1,34,344,33,5,56,7,8,9,10,11]
-    heapq.heapify(myRanList)
-    print("heap list: ",myRanList)
-    print(heapq.heappop(myRanList))
-    print("heap list: ",myRanList)
-    print(heapq.heappop(myRanList))
-    print("heap list: ",myRanList)
-    print(heapq.heappop(myRanList))
-    print("heap list: ",myRanList)
-    print(heapq.heappop(myRanList))
-    print("heap list: ",myRanList)
-    print(heapq.heappop(myRanList))
-    print("heap list: ",myRanList)
-    print(heapq.heappop(myRanList))
-    print("heap list: ",myRanList)
-    print(heapq.heappop(myRanList))
-    print("heap list: ",myRanList)
+    # mySet = set(myList)
+    # for num in mySet:
+    #     print(num)
+    #
+    # myRanList = [1,34,344,33,5,56,7,8,9,10,11]
+    # heapq.heapify(myRanList)
+    # print("heap list: ",myRanList)
+    # print(heapq.heappop(myRanList))
+    # print("heap list: ",myRanList)
+    # print(heapq.heappop(myRanList))
+    # print("heap list: ",myRanList)
+    # print(heapq.heappop(myRanList))
+    # print("heap list: ",myRanList)
+    # print(heapq.heappop(myRanList))
+    # print("heap list: ",myRanList)
+    # print(heapq.heappop(myRanList))
+    # print("heap list: ",myRanList)
+    # print(heapq.heappop(myRanList))
+    # print("heap list: ",myRanList)
+    # print(heapq.heappop(myRanList))
+    # print("heap list: ",myRanList)
