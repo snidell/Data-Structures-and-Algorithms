@@ -7,6 +7,7 @@ class Solution:
         mystr+=' '
         string_length = len(mystr)
         start = 0;
+        print("strign length:",string_length)
         for i in range(rows):
             # 0  +  8
             # 6  +  8
@@ -15,22 +16,20 @@ class Solution:
             # 24  +  8
             # 30  +  8
             start = start + cols;
-
+            print("start:",start)
+            # adjust the start point to a space as we cannot start the next word next to the previous
             if (mystr[start % string_length] == ' '):
-                start+= 1;
+                start+= 1
             else :
+                # move the next start to the end of the string
                 while (start > 0 and mystr[(start-1) % string_length] != ' '):
-                    start-=1;
+                    start-=1
 
+            print("adjusted start",start)
         return start // string_length
-
-    
-
 
 
 if __name__ =="__main__":
     mySolution = Solution()
     words = ["hello","world"]
-    nums = [1,2,3,4,5,6,7,8,9]
-    print(sum(nums[0:3]))
-    print(mySolution.wordsTyping(words,6,8))
+    print(mySolution.wordsTyping(words,2,300))

@@ -5,10 +5,10 @@
 from typing import List
 class Solution:
     # tiem complexity Assuming we operate on integers that fit within the size
-    # of the integer word, the time complexity T(n) satisfies T(n) = T(n - 1) + 
+    # of the integer word, the time complexity T(n) satisfies T(n) = T(n - 1) +
     # 0(2^n-1). The time complexity is 0(2^n).
     def grayCode(self, n: int) -> List[int]:
-        print("n: ",n)
+        # print("n: ",n)
         if n == 0:
             return[0]
         # These implicitly begin with   0 at bit-index (n-1)
@@ -17,7 +17,7 @@ class Solution:
         leading_bit_one = 1 << (n -1)
         # Process in reverse order to acheive reflection
         # of gray code
-        print(gray_code_num_bits_minus_1," ",leading_bit_one)
+        # print(gray_code_num_bits_minus_1," ",leading_bit_one)
         return gray_code_num_bits_minus_1 + [leading_bit_one |
                 i for i in reversed(gray_code_num_bits_minus_1)]
 

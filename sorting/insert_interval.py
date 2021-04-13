@@ -30,7 +30,6 @@ class Solution:
         def merge_interval(int1,int2):
             start = min(int1[0],int2[0])
             end = max(int1[1],int2[1])
-            print(start,end)
             return [start,end]
 
         idx,n = 0 , len(intervals)
@@ -46,7 +45,6 @@ class Solution:
 
         while idx < n:
             if intervals[idx][0] <= result[-1][1]:
-                print("call")
                 result[-1] = merge_interval(intervals[idx],result[-1])
             else:
                 result.append(intervals[idx])

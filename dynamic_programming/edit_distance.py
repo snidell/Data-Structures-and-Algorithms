@@ -23,12 +23,12 @@ class Solution:
             return n+m
         # initialize the 2D array
         d = [[0] * (m +1) for _ in range(n + 1)]
-
+        print(d)
         for i in range(n + 1):
             d[i][0] = i
         for j in range(m + 1):
             d[0][j] = j
-
+        print(d)
         # DP compute
 
         for i in range(1, n + 1):

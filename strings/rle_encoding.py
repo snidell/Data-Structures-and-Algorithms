@@ -58,9 +58,11 @@ class Solution(object):
             return result
 
         letters, count = RLE(S)
+        print(letters,count)
         ans = 0
         for word in words:
             letters2, count2 = RLE(word)
+            print(letters2,count2)
             if letters2 != letters: continue
             if valid_count(count,count2):
                 ans += 1

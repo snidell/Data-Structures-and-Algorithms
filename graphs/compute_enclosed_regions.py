@@ -39,7 +39,7 @@ class Solution:
         # get all board cells
         borders = list(product(range(self.ROWS),[0,self.COLS-1]))\
                 + list(product([0,self.ROWS - 1],range(self.COLS)))
-
+        print(borders)
         # mark the escaped cells with a placeholder eg 'E'
         for row,col in borders:
             # self.DFS(board,row,col)

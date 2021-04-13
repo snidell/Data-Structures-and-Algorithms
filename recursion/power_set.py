@@ -31,12 +31,15 @@ class Solution:
         for i in range(2**n,2**(n+1)):
             # why [3:] ? it removes the 0bsign of the binary number 0b1 which
             # isn't needed here
+            print(i)
             bitmask = bin(i)[3:]
+            print(bitmask)
             # append subset to that bitmask
             number = []
             for j in range(n):
                 if bitmask[j] =='1':
                     number.append(nums[j])
+            print(number)
             output.append(number)
         return output
 

@@ -70,7 +70,7 @@ class Solution:
                     # if this sequence is better than our previously stored sequence update the DP matrix
                     if len(cand) < len(dp[i][j]):
                         dp[i][j] = cand
-        # print(dp)
+        print(dp)
         return dp[0][N-1]
 
 

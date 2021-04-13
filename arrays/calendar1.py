@@ -83,28 +83,3 @@ if __name__ =="__main__":
 # [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
 # [[0, 0, 0, 0], [0, 1, 1, 1], [0, 1, 2, 2]]
 # create 2d matrix to store dp cache
-class Solution:
-    def countSquares(self, matrix: List[List[int]]) -> int:
-        m = len(matrix)
-        n = len(matrix[0])
-        dp = []
-        for i in range(m):
-            dp.append([0] * n)
-        print(dp)
-        for i in range(m):
-            for j in range(n):
-                if matrix[i][j] == 1:
-                    dp[i][j] = min(dp[i - 1][j],dp[i][j -1],dp[i - 1][j - 1]) +1
-                else:
-                    dp[i][j] = 0
-
-        total = 0
-        print(dp)
-        print(range(m))
-        print(sum(dp[0]))
-        print(dp[1])
-        print(dp[2])
-        for i in range(len(dp)):
-            print(dp[i])
-            total = total + sum(dp[i])
-        return total
