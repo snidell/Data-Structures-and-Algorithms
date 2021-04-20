@@ -25,7 +25,6 @@ class Solution:
             print(large,small)
             result = min(result,large-small)
 
-        # return min(b - a for a, b in zip(nums[:4], nums[-4:]))
         return result
 
 
